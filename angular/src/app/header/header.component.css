@@ -1,5 +1,15 @@
-.class{
-    color: chartreuse;
-    font-style: italic;
-
-}
+.topnav {
+    background-color:rgb(241, 245, 245);
+    overflow: hidden;
+  }
+  
+  .topnav a {
+    float:none;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+    left: 40%;
+  }
