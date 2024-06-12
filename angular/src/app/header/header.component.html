@@ -6,6 +6,10 @@
   <a href="#about">About</a>
 </div>
 <hr>
+<img src="dog.png"/>
+<div>
+<button [disabled]="!(inStock>0)"   class="btn btn-primary" >click me!</button>
+</div>
 <div>
   <button (dblclick)="show('This is alert!')">click me!</button>
 </div>
@@ -14,3 +18,8 @@
   {{i|uppercase}} 
 </div>
 <p>this is the current {{birthday|date:'long'|uppercase}}</p>
+<div>
+<input type="text" placeholder="name" aria-hidden="true"/>
+<p [hidden]="hide()">"hi"</p>
+
+</div>

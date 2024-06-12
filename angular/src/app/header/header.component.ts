@@ -13,10 +13,18 @@ import {TopheaderComponent} from '../topheader/topheader.component'
 export class HeaderComponent {
  i:string="hello! this is from header";
 j:string="This is movable item!!";
+inStock=0;
+
 birthday = new Date()
+
+
 
  show(msg:string) {
   alert(msg)
+}
+
+hide(){
+  return false;
 }
 
 // constructor(){
