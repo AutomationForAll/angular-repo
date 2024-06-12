@@ -5,10 +5,15 @@
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
 </div>
+<h1 *ngIf="i.length>100">This is directives</h1>
+<!-- <h1 *ngIf="i.length>5">This is directives</h1> -->
 <hr>
+<ng-template [ngIf]="i.length>5">
+  <h1>who!!!</h1>
+</ng-template>
 <img src="dog.png"/>
 <div>
-<button [disabled]="!(inStock>0)"   class="btn btn-primary" >click me!</button>
+<!-- <button [disabled]="!(inStock>0)"   class="btn btn-primary" >click me!</button> -->
 </div>
 <div>
   <button (dblclick)="show('This is alert!')">click me!</button>
@@ -20,6 +25,18 @@
 <p>this is the current {{birthday|date:'long'|uppercase}}</p>
 <div>
 <input type="text" placeholder="name" aria-hidden="true"/>
-<p [hidden]="hide()">"hi"</p>
+<!-- <p [hidden]="hidedata()">"hi"</p> -->
+<h6>{{i|customePipe:"custom pipe"|uppercase}}</h6>
+
+
+<ul *ngIf="isVisible">
+  <li *ngFor="let x of friendList">
+    This is the name{{x.name}} and age {{x.age}}
+  </li>
+</ul>
+
+<button (click)="hidedata()">
+  Click to Hide List
+</button>
 
 </div>
