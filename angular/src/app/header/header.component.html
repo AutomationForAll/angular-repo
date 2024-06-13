@@ -29,14 +29,35 @@
 <h6>{{i|customePipe:"custom pipe"|uppercase}}</h6>
 
 
-<ul *ngIf="isVisible">
+<!-- <ul *ngIf="isVisible">
   <li *ngFor="let x of friendList">
     This is the name{{x.name}} and age {{x.age}}
   </li>
-</ul>
+</ul> -->
+<li *ngFor="let x of friendList">
+  
+  <a href="#"> is the name {{x.name}} and age {{x.age}}</a>
+</li>
 
 <button (click)="hidedata()">
   Click to Hide List
 </button>
+
+<!-- </div>
+<div>
+<input type="text" [value]="msg" (input)="onInputmsg($event)">  
+</div>
+<div>
+  <p>{{msg}}</p>
+</div> -->
+<div>
+  <input type="text" [value]="msg" [(ngModel)]="msg">  
+  </div>
+  <div>
+    <p>{{msg}}</p>
+  </div>
+  <button (click)="onIncrease()">+</button>
+  <span>{{numberOfItems}}</span>
+  <button (click)="onDescrease()">-</button>
 
 </div>
