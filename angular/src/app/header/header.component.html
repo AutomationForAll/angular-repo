@@ -1,4 +1,15 @@
-<app-topheader></app-topheader>
+<!-- <app-topheader></app-topheader> -->
+<!-- data pass using custom event from child to parent -->
+<app-childheader (inputText)="updateText($event)"></app-childheader>
+<!-- parent to child property binding (custom property) -->
+<!-- <app-childheader *ngFor="let x of friendList" [friend]="x"></app-childheader> -->
+
+<!-- ng style dynamic css selector -->
+<div [ngStyle]="{fontWeight:'bold',color:isDisabled ?'Yellow' : 'Blue'}">
+  This is ng style element
+
+
+</div>
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="#product">product</a>
@@ -11,47 +22,47 @@
 <ng-template [ngIf]="i.length>5">
   <h1>who!!!</h1>
 </ng-template>
-<img src="dog.png"/>
+<img src="dog.png" />
 <div>
-<!-- <button [disabled]="!(inStock>0)"   class="btn btn-primary" >click me!</button> -->
+  <!-- <button [disabled]="!(inStock>0)"   class="btn btn-primary" >click me!</button> -->
 </div>
 <div>
   <button (dblclick)="show('This is alert!')">click me!</button>
 </div>
-<div> 
-  Uppercase value is : 
-  {{i|uppercase}} 
+<div>
+  Uppercase value is :
+  {{i|uppercase}}
 </div>
 <p>this is the current {{birthday|date:'long'|uppercase}}</p>
 <div>
-<input type="text" placeholder="name" aria-hidden="true"/>
-<!-- <p [hidden]="hidedata()">"hi"</p> -->
-<h6>{{i|customePipe:"custom pipe"|uppercase}}</h6>
+  <input type="text" placeholder="name" aria-hidden="true" />
+  <!-- <p [hidden]="hidedata()">"hi"</p> -->
+  <h6>{{i|customePipe:"custom pipe"|uppercase}}</h6>
 
 
-<!-- <ul *ngIf="isVisible">
+  <!-- <ul *ngIf="isVisible">
   <li *ngFor="let x of friendList">
     This is the name{{x.name}} and age {{x.age}}
   </li>
 </ul> -->
-<li *ngFor="let x of friendList">
-  
-  <a href="#"> is the name {{x.name}} and age {{x.age}}</a>
-</li>
+  <!-- <li *ngFor="let x of friendList">
 
-<button (click)="hidedata()">
-  Click to Hide List
-</button>
+    <a href="#"> is the name {{x.name}} and age {{x.age}}</a>
+  </li> -->
 
-<!-- </div>
+  <button (click)="hidedata()">
+    Click to Hide List
+  </button>
+
+  <!-- </div>
 <div>
 <input type="text" [value]="msg" (input)="onInputmsg($event)">  
 </div>
 <div>
   <p>{{msg}}</p>
 </div> -->
-<div>
-  <input type="text" [value]="msg" [(ngModel)]="msg">  
+  <div>
+    <input type="text" [value]="msg" [(ngModel)]="msg">
   </div>
   <div>
     <p>{{msg}}</p>
@@ -61,3 +72,12 @@
   <button (click)="onDescrease()">-</button>
 
 </div>
+
+<!--  -->
+<div>
+<input type="text" [(ngModel)]="searchText">
+<button [ngClass]="{'btn-search':searchText}" [disabled]="!searchText">Search</button>
+<p>{{searchText}}</p>
+</div>
+
+<p>{{headerText}}</p>

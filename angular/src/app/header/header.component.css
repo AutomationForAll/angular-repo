@@ -13,3 +13,9 @@
     position: relative;
     left: 40%;
   }
+
+  .btn-search{
+    color: blue;
+    background-color: brown;
+
+  }
