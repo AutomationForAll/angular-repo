@@ -4,12 +4,14 @@ import { HeaderComponent } from './header/header.component';
 import { TopheaderComponent } from './topheader/topheader.component';
 import { TempleteRefeComponent } from './templete-refe/templete-refe.component';
 import { ComponentrefComponent } from './componentref/componentref.component';
+import { NgcontentComponent } from './ngcontent/ngcontent.component';
+import { SiblingComponent } from './sibling/sibling.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent],
+  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

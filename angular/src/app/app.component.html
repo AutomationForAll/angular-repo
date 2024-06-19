@@ -2,6 +2,13 @@
 <!-- <p>{{appText}}</p>
 <app-topheader (topHeaderEvent)="parentAppMethod($event)"></app-topheader>
 <button type="button" class="btn btn-danger">Danger</button> -->
-<app-templete-refe [Componentref]="ComponentrefComponent"></app-templete-refe>
+<!-- <app-templete-refe [Componentref]="ComponentrefComponent"></app-templete-refe> -->
 
-<app-componentref #ComponentrefComponent></app-componentref>
+<!-- <app-componentref #ComponentrefComponent></app-componentref> -->
+ <app-ngcontent>
+    <h1 #h1>this is from ng content1</h1>
+    <h1 #h1>this is from ng content2</h1>
+    <h1 #h1>this is from ng content3</h1>
+    <h1 #h1>this is from ng content4</h1>
+   <app-sibling></app-sibling> 
+ </app-ngcontent>
