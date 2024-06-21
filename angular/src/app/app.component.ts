@@ -6,18 +6,19 @@ import { TempleteRefeComponent } from './templete-refe/templete-refe.component';
 import { ComponentrefComponent } from './componentref/componentref.component';
 import { NgcontentComponent } from './ngcontent/ngcontent.component';
 import { SiblingComponent } from './sibling/sibling.component';
+import { NgphasesComponent } from './ngphases/ngphases.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent],
+  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'angular';  
-
+  appmsg:string
   appText:string=""
   componnetDataViaApp:string=''
 
@@ -28,6 +29,9 @@ export class AppComponent {
 
   @ViewChild('ComponentrefComponent')componentdata:ElementRef;
 
-
+  onChange1(inputdata:HTMLInputElement){
+    console.log(inputdata.value)
+   this.appmsg=inputdata.value
+  }
 
 }

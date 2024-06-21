@@ -5,10 +5,16 @@
 <!-- <app-templete-refe [Componentref]="ComponentrefComponent"></app-templete-refe> -->
 
 <!-- <app-componentref #ComponentrefComponent></app-componentref> -->
- <app-ngcontent>
+ <!-- <app-ngcontent>
     <h1 #h1>this is from ng content1</h1>
     <h1 #h1>this is from ng content2</h1>
     <h1 #h1>this is from ng content3</h1>
     <h1 #h1>this is from ng content4</h1>
    <app-sibling></app-sibling> 
- </app-ngcontent>
+ </app-ngcontent> -->
+
+ <div>
+  <input type="text" #inputdata/>
+  <button type="button" (click)="onChange1(inputdata)">click me!</button>
+ </div>
+ <app-ngphases [msg]="appmsg"></app-ngphases>
