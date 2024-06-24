@@ -13,11 +13,17 @@
    <app-sibling></app-sibling> 
  </app-ngcontent> -->
 
- <div>
+ <!-- <div>
   <input type="text" #inputdata (focus)="0"/>
   <button type="button" (click)="onChange1(inputdata)">click me!</button>
  </div>
  <app-ngphases [msg]="appmsg" *ngIf="!toDestroy">
   <p #para>this is paragraph from child component :{{appmsg}}</p>
  </app-ngphases>
- <button (click)="destroy()">show/hide</button>
+ <button (click)="destroy()">show/hide</button> -->
+
+ <div>
+<input type="text" />
+<button type="submit" appCutomedirectives>click me</button>
+
+ </div>

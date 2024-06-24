@@ -8,12 +8,13 @@ import { NgcontentComponent } from './ngcontent/ngcontent.component';
 import { SiblingComponent } from './sibling/sibling.component';
 import { NgphasesComponent } from './ngphases/ngphases.component';
 import { NgIf } from '@angular/common';
+import { CutomedirectivesDirective } from './cutomedirectives.directive';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf],
+  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
