@@ -8,13 +8,14 @@ export class HostlistnerAndbindingDirective {
 
   private element:ElementRef;
   private renderer:Renderer2;
+  
   constructor(ele:ElementRef,renderer: Renderer2) { 
   this.element=ele;
   this.renderer=renderer;
 
 }
 
-@HostListener('mouseenter') OnMouseEnter(){
+@HostListener('mouseover') OnMouseEnter(){
  this.renderer.addClass(this.element.nativeElement,'button')
 
 }
@@ -24,7 +25,7 @@ export class HostlistnerAndbindingDirective {
   
   }
 
-@HostBinding('style.background-color')background:string='yellow'
+@HostBinding('value')input:string='yellow'
 
 
 

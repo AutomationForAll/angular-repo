@@ -53,4 +53,8 @@ export class AppComponent {
 
   }
 
+  onClick(){
+    console.log('click happen!!')
+  }
+
 }
