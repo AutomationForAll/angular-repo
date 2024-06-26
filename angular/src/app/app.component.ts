@@ -10,12 +10,14 @@ import { NgphasesComponent } from './ngphases/ngphases.component';
 import { NgIf } from '@angular/common';
 import { CutomedirectivesDirective } from './cutomedirectives.directive';
 import { HostlistnerAndbindingDirective } from './hostlistner-andbinding.directive';
+import { CutomClassComponent } from './cutom-class/cutom-class.component';
+import { CustomClassDirectiveDirective } from './custom-class-directive.directive';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective],
+  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective,CutomClassComponent,CustomClassDirectiveDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -25,6 +27,7 @@ export class AppComponent {
   appText:string=""
   componnetDataViaApp:string=''
   toDestroy:boolean=false;
+  hide:boolean=false;
 
   parentAppMethod(value:string){
     console.log(value)

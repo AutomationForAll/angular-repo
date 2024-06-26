@@ -30,5 +30,10 @@
 
  <div >
   <input type="text"  value='hello' [appCutomedirectives]="{setBackgroundColor:'purple',setfont:'gray'}" />
-<button type="submit"  >click me</button>
+<button type="submit"  [appHostlistnerAndbinding]="!hide">click me</button>
  </div>
+
+ <button  type="submit" [appCustomClassDirective]="{button19:true,button:true}">
+  This is cutom drivities class
+</button>
+

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, Renderer2, input } from '@angular/core';
 
 @Directive({
   selector: '[appHostlistnerAndbinding]',
@@ -8,6 +8,12 @@ export class HostlistnerAndbindingDirective {
 
   private element:ElementRef;
   private renderer:Renderer2;
+
+  @Input() set appHostlistnerAndbinding(hide:boolean){
+    if(hide){
+      this.renderer.addClass(this.element.nativeElement,'class')
+    }
+  }
   
   constructor(ele:ElementRef,renderer: Renderer2) { 
   this.element=ele;
@@ -15,17 +21,17 @@ export class HostlistnerAndbindingDirective {
 
 }
 
-@HostListener('mouseover') OnMouseEnter(){
- this.renderer.addClass(this.element.nativeElement,'button')
+// @HostListener('mouseover') OnMouseEnter(){
+//  this.renderer.addClass(this.element.nativeElement,'button')
 
-}
+// }
 
- @HostListener('mouseout') OnMouseOut(){
-   this.renderer.removeClass(this.element.nativeElement,'button')
+//  @HostListener('mouseout') OnMouseOut(){
+//    this.renderer.removeClass(this.element.nativeElement,'button')
   
-  }
+//   }
 
-@HostBinding('value')input:string='yellow'
+//@HostBinding('value')input:string='yellow'
 
 
 
