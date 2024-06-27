@@ -7,7 +7,7 @@ import { ComponentrefComponent } from './componentref/componentref.component';
 import { NgcontentComponent } from './ngcontent/ngcontent.component';
 import { SiblingComponent } from './sibling/sibling.component';
 import { NgphasesComponent } from './ngphases/ngphases.component';
-import { NgIf } from '@angular/common';
+import { NgIf,NgStyle } from '@angular/common';
 import { CutomedirectivesDirective } from './cutomedirectives.directive';
 import { HostlistnerAndbindingDirective } from './hostlistner-andbinding.directive';
 import { CutomClassComponent } from './cutom-class/cutom-class.component';
@@ -17,7 +17,7 @@ import { CustomClassDirectiveDirective } from './custom-class-directive.directiv
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective,CutomClassComponent,CustomClassDirectiveDirective],
+  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective,CutomClassComponent,CustomClassDirectiveDirective,NgStyle],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -28,6 +28,7 @@ export class AppComponent {
   componnetDataViaApp:string=''
   toDestroy:boolean=false;
   hide:boolean=false;
+  active:boolean=true;
 
   parentAppMethod(value:string){
     console.log(value)
