@@ -33,11 +33,32 @@
 <button type="submit"  [appHostlistnerAndbinding]="!hide">click me</button>
  </div> -->
 
- <button  type="submit" [appCustomClassDirective]="{button19:true,button:true}">
+ <!-- <button  type="submit" [appCustomClassDirective]="{button19:true,button:true}">
   This is cutom Directive class
 </button>
 
 <div [appCutomedirectives]="{backgroundColor:'gold',color:'white'}">
   <p>This is cutom Directive styple</p>
+</div> -->
+<!-- <div [ngSwitch]="tab">
+<div *ngSwitchDefault="'info'">
+  <h1>first line</h1>
+  <p>this is some random text1 info</p>
 </div>
+<div *ngSwitchCase="'debug'">
+  <h1>second line2</h1>
+  <p>this is some random text2 debug</p>
+</div>
+<div *ngSwitchCase="'error'">
+  <h1>third line3</h1>
+  <p>this is some random text3 error</p>
+</div>
+
+</div> -->
+
+<button type="submit">parent</button>
+<br>
+<app-sibling></app-sibling>
+<br>
+<app-componentref></app-componentref>
 

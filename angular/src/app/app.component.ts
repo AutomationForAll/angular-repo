@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { TopheaderComponent } from './topheader/topheader.component';
@@ -7,7 +7,7 @@ import { ComponentrefComponent } from './componentref/componentref.component';
 import { NgcontentComponent } from './ngcontent/ngcontent.component';
 import { SiblingComponent } from './sibling/sibling.component';
 import { NgphasesComponent } from './ngphases/ngphases.component';
-import { NgIf,NgStyle } from '@angular/common';
+import { NgIf,NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { CutomedirectivesDirective } from './cutomedirectives.directive';
 import { HostlistnerAndbindingDirective } from './hostlistner-andbinding.directive';
 import { CutomClassComponent } from './cutom-class/cutom-class.component';
@@ -17,9 +17,10 @@ import { CustomClassDirectiveDirective } from './custom-class-directive.directiv
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective,CutomClassComponent,CustomClassDirectiveDirective,NgStyle],
+  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective,CutomClassComponent,CustomClassDirectiveDirective,NgStyle,NgSwitch,NgSwitchCase,NgSwitchDefault],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  //encapsulation:ViewEncapsulation.None
 })
 export class AppComponent {
   title = 'angular';  
@@ -29,6 +30,7 @@ export class AppComponent {
   toDestroy:boolean=false;
   hide:boolean=false;
   active:boolean=true;
+  tab:string=''
 
   parentAppMethod(value:string){
     console.log(value)
