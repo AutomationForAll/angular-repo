@@ -12,6 +12,7 @@ import { CutomedirectivesDirective } from './cutomedirectives.directive';
 import { HostlistnerAndbindingDirective } from './hostlistner-andbinding.directive';
 import { CutomClassComponent } from './cutom-class/cutom-class.component';
 import { CustomClassDirectiveDirective } from './custom-class-directive.directive';
+import { subscribe } from './service/subscribe.service';
 
 
 @Component({
@@ -20,6 +21,7 @@ import { CustomClassDirectiveDirective } from './custom-class-directive.directiv
   imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective,CutomClassComponent,CustomClassDirectiveDirective,NgStyle,NgSwitch,NgSwitchCase,NgSwitchDefault],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+  providers:[subscribe]
   //encapsulation:ViewEncapsulation.None
 })
 export class AppComponent {
@@ -44,8 +46,8 @@ export class AppComponent {
    this.appmsg=inputdata.value
   }
 
-  constructor(){
-    console.log("patent cons")
+  constructor(private sub:subscribe){
+   
   }
 
   ngAfterViewInit(): void {
@@ -61,6 +63,10 @@ export class AppComponent {
 
   onClick(){
     console.log('click happen!!')
+  }
+
+  onclicksub(){
+this.sub.onclicksubscribe('data from parent');
   }
 
 }
