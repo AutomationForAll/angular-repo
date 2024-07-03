@@ -62,8 +62,23 @@
 <br>
 <app-componentref></app-componentref> -->
 
-<button type="submit" (click)="onclicksub()">click</button>
+<!-- <button type="submit" (click)="onclicksub()">click</button>
+<app-componentref></app-componentref> -->
+<div>
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr *ngFor="let x of data">
+    <td>{{x.company}}</td>
+    <td>{{x.contact}}</td>
+    <td>{{x.country}}</td>
+  </tr>
+</table>
 <app-componentref></app-componentref>
+</div>
 
 
 

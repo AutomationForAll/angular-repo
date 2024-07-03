@@ -18,7 +18,10 @@ export class ComponentrefComponent {
   }
 
   onclicksub(){
-    this.sub.onclicksubscribe('data from child');
-      }
+    //this.sub.onclicksubscribe('data from parent');
+    this.sub.addData('name1','conatct1','AU')
+       
+      
+     }
 
 }
