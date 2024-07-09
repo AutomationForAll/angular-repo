@@ -14,12 +14,13 @@ import { CutomClassComponent } from './cutom-class/cutom-class.component';
 import { CustomClassDirectiveDirective } from './custom-class-directive.directive';
 import { subscribe } from './service/subscribe.service';
 import { UserData } from './module/appdata';
+import { ObserveComponent } from './observe/observe.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective,CutomClassComponent,CustomClassDirectiveDirective,NgStyle,NgSwitch,NgSwitchCase,NgSwitchDefault,NgFor],
+  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective,CutomClassComponent,CustomClassDirectiveDirective,NgStyle,NgSwitch,NgSwitchCase,NgSwitchDefault,NgFor,ObserveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers:[subscribe]
