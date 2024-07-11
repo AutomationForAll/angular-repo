@@ -29,11 +29,11 @@ export class ObserveComponent {
 
   //myobsrevable=of(this.arr1,this.arr2)
 
- //myobsrevable=from(this.data1)
+ myobsrevable=from(this.data1)
 
- mypromise= new Promise((resolve,reject)=>{
-  resolve
- })
+//  mypromise= new Promise((resolve,reject)=>{
+//   resolve
+//  })
 
 
   // fetchData(){

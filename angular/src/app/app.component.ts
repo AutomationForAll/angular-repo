@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { TopheaderComponent } from './topheader/topheader.component';
 import { TempleteRefeComponent } from './templete-refe/templete-refe.component';
@@ -15,12 +15,14 @@ import { CustomClassDirectiveDirective } from './custom-class-directive.directiv
 import { subscribe } from './service/subscribe.service';
 import { UserData } from './module/appdata';
 import { ObserveComponent } from './observe/observe.component';
+import { NavheaderComponent } from './navheader/navheader.component';
+import { routes } from './app.routes';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective,CutomClassComponent,CustomClassDirectiveDirective,NgStyle,NgSwitch,NgSwitchCase,NgSwitchDefault,NgFor,ObserveComponent],
+  imports: [RouterOutlet,ComponentrefComponent,TempleteRefeComponent,NgcontentComponent,SiblingComponent,NgphasesComponent,NgIf,CutomedirectivesDirective,HostlistnerAndbindingDirective,CutomClassComponent,CustomClassDirectiveDirective,NgStyle,NgSwitch,NgSwitchCase,NgSwitchDefault,NgFor,ObserveComponent,NavheaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers:[subscribe]
@@ -36,6 +38,9 @@ export class AppComponent {
   active:boolean=true;
   tab:string=''
   data:UserData[]= this.sub.getData()
+
+  
+
 
   parentAppMethod(value:string){
     console.log(value)
