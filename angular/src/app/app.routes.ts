@@ -8,5 +8,6 @@ import { ContactComponent } from './contact/contact.component';
  export const routes:Routes=[
     {path:'Home',component:HomeComponent} ,
     {path:'About',component:AboutComponent},
-    {path:'Contact',component:ContactComponent}
+    {path:'Contact',component:ContactComponent},
+    {path:'**',component:HomeComponent}
   ]
