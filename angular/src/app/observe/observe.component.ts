@@ -1,15 +1,18 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { from, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-observe',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,NgIf],
   templateUrl: './observe.component.html',
   styleUrl: './observe.component.css'
 })
-export class ObserveComponent {
+export class ObserveComponent implements OnInit {
+  ngOnInit(): void {
+    this.hideAnimatedDiv()
+  }
 
   data:any[]=[]
 
@@ -17,19 +20,19 @@ export class ObserveComponent {
   arr2:any[]=[5,6,7,8]
   data1:string='hello'
 
-  //  myobsrevable =new Observable((ob)=>{
-  //   setTimeout(()=>{ob.next(1)},1000) 
-  //   setTimeout(()=>{ob.next(2)},2000)
-  //   setTimeout(()=>{ob.next(3)},3000)
-  //  // setTimeout(()=>{ob.error('this is error')},4000)
-  //   setTimeout(()=>{ob.next(4)},5000)
-  //   setTimeout(()=>{ob.next(5)},6000)
-  //   setTimeout(()=>{ob.complete()},7000)
-  //  });
+    myobsrevable =new Observable((ob)=>{
+     setTimeout(()=>{ob.next(1)},5000) 
+     setTimeout(()=>{ob.next(2)},6000)
+     setTimeout(()=>{ob.next(3)},7000)
+    // setTimeout(()=>{ob.error('this is error')},4000)
+     setTimeout(()=>{ob.next(4)},8000)
+     setTimeout(()=>{ob.next(5)},9000)
+     setTimeout(()=>{ob.complete()},10000)
+    });
 
   //myobsrevable=of(this.arr1,this.arr2)
 
- myobsrevable=from(this.data1)
+ //myobsrevable=from(this.data1)
 
 //  mypromise= new Promise((resolve,reject)=>{
 //   resolve
@@ -62,4 +65,16 @@ export class ObserveComponent {
       
     )
   }
+
+
+  public isDisplayed: boolean = false;
+
+  hideAnimatedDiv() {
+      setTimeout(() => {
+          this.isDisplayed = true;
+      }, 3000);
+  }
+
+ 
+
 }

@@ -1,5 +1,5 @@
-import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
-import { RouterModule, RouterOutlet, Routes } from '@angular/router';
+import { Component, ElementRef, inject, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { NavigationCancel, NavigationEnd, NavigationStart, Router, RouterModule, RouterOutlet, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { TopheaderComponent } from './topheader/topheader.component';
 import { TempleteRefeComponent } from './templete-refe/templete-refe.component';
@@ -28,7 +28,7 @@ import { routes } from './app.routes';
   providers:[subscribe]
   //encapsulation:ViewEncapsulation.None
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular';  
   appmsg:string
   appText:string=""
@@ -38,9 +38,9 @@ export class AppComponent {
   active:boolean=true;
   tab:string=''
   data:UserData[]= this.sub.getData()
-
+  showloader:boolean=false
   
-
+router:Router=inject(Router)
 
   parentAppMethod(value:string){
     console.log(value)
@@ -56,6 +56,17 @@ export class AppComponent {
 
   constructor(private sub:subscribe){
    
+  }
+  ngOnInit(): void {
+    //throw new Error('Method not implemented.');
+    this.router.events.subscribe((routerevent)=>{
+      if(routerevent instanceof NavigationStart){
+        this.showloader=true
+      }
+      if(routerevent instanceof NavigationEnd|| routerevent instanceof NavigationCancel){
+        this.showloader=false
+      }
+    })
   }
 
   ngAfterViewInit(): void {
